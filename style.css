@@ -1,0 +1,189 @@
+:root {
+    --card-height: 300px;
+    --card-width: calc(var(--card-height) / 1.5);
+}
+
+* {
+    box-sizing: border-box;
+    
+    }
+*{
+        margin: 0;
+        padding: 0;
+    }
+.images{
+padding-top: 150px;
+}
+
+
+
+k{
+    text-align: center;
+    width: 1225px;
+    background-color: dimgrey;
+    height:90px;
+    line-break: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x:hidden;
+}
+.character{
+padding-left: 45px;
+}
+
+.images{
+    width: 1250px;
+    height: 1000px;
+    overflow-x: hidden;
+    position: absolute;
+    justify-content: center;
+    margin-top: 0px;
+    width: 100vw;
+    display: grid;
+    grid-template-columns:repeat(auto-fill,minmax(300px,300px));
+    column-gap: 60px;
+    row-gap: 120px;
+    background:url(http://getwallpapers.com/wallpaper/full/9/7/7/1127275-beautiful-cool-black-background-designs-1920x1200-desktop.jpg)
+}
+
+.card {
+    width: var(--card-width);
+    height: var(--card-height);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 0 36px;
+    perspective: 2500px;
+    margin: 0 50px;
+}
+
+.cover-image {
+    padding-top: 60px;
+    width: 250px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.wrapper {
+    transition: all 0.5s;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+
+.card:hover .wrapper {
+    transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+    box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+}
+
+.wrapper::before,
+.wrapper::after {
+    content: "";
+    opacity: 0;
+    width: 100%;
+    height: 80px;
+    transition: all 0.5s;
+    position: absolute;
+    left: 0;
+}
+
+.wrapper::before {
+    top: 0;
+    height: 100%;
+    background-image: linear-gradient(to top,
+            transparent 46%,
+            rgba(12, 13, 19, 0.5) 68%,
+            rgba(12, 13, 19) 97%);
+}
+
+.wrapper::after {
+    bottom: 0;
+    opacity: 1;
+    background-image: linear-gradient(to bottom,
+            transparent 46%,
+            rgba(12, 13, 19, 0.5) 68%,
+            rgba(12, 13, 19) 97%);
+}
+
+.card:hover .wrapper::before,
+.wrapper::after {
+    opacity: 1;
+}
+
+.card:hover .wrapper::after {
+    height: 120px;
+}
+
+.title {
+    padding-left: 45%;
+    width: 250px;
+    transition: transform 0.5s;
+}
+
+.card:hover .title {
+    transform: translate3d(0%, -50px, 100px);
+}
+
+.character {
+    height: 100%;
+    width: 230px;
+    opacity: 0;
+    transition: all 0.5s;
+    position: absolute;
+    z-index: -1;
+}
+
+.card:hover .character {
+    opacity: 1;
+    transform: translate3d(0%, -30%, 100px);
+}
+i{
+    color: aquamarine;
+}
+
+
+.banner-btn{
+margin: 70px auto 0;
+}
+.banner-btn a{
+    width: 300px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 10px;
+    padding: 120 0;
+    color: #fff;
+    border: .1px solid #fff;
+    position: relative;
+    z-index: 1;
+    transition: color o.5s;
+    }
+.banner-btn a span{
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    z-index: -1;
+    transition: 0.5s;
+    }
+.banner-btn a:hover span{
+    width: 100%;
+    letter-spacing: 0.25em;
+    }
+.banner-btn a:hover {
+    color: black;
+    letter-spacing: 0.25em;
+}
+.banner-btn{
+    position: absolute;
+    left: 40%;
+    display: grid;
+    column-gap: 30px;
+    top: 1400px;
+    bottom: 100px;
+}
